@@ -1,3 +1,10 @@
+<template>
+  <NuxtLayout>
+    <NuxtPage />
+    <NuxtRouteAnnouncer />
+  </NuxtLayout>
+</template>
+
 <script setup>
 import { useHead } from '#imports'
 
