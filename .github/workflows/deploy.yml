@@ -14,21 +14,24 @@ jobs:
         with:
           node-version: "20"
       - run: npm install
-      - run: npx nuxt build --preset github_pages
+      - run: NUXT_APP_BASE_URL=/energy-efficiency-calculator/ npx nuxt build --preset github_pages
+      - run: echo "" > .output/public/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./.output/public
+
   deploy:
     needs: build
     permissions:
       pages: write
-      id-token: write 
+      id-token: write
     environment:
       name: github_pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          path: ./.output/public
