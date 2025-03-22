@@ -17,10 +17,10 @@ useHead({
     { property: 'og:title', content: 'Calculadora de Eficiência Energética - Calcule o Consumo de Energia do seu PC' },
     { property: 'og:description', content: 'Descubra como otimizar o consumo de energia do seu computador e economizar com dicas práticas para um uso mais sustentável.' },
     { property: 'og:type', content: 'website' },
-    { property: 'og:url', content: 'https://seusite.com/energy-efficiency-calculator/' }
+    { property: 'og:url', content: 'https://jsrwell.github.io/energy-efficiency-calculator/' }
   ],
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    { rel: 'icon', type: 'image/x-icon', href: '/energy-efficiency-calculator/favicon.ico' }
   ]
 })
 </script>
