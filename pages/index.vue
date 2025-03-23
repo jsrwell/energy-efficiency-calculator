@@ -1,6 +1,11 @@
 <template>
     <div class="global-root">
         <EnergyCalculator />
+        <footer>
+            <p>Projeto de Extensão - 2025.1 (ODS 4 & ODS 12)</p>
+            <p>Desenvolvido por <a href="https://github.com/jsrwell" target="_blank"
+                    rel="noopener noreferrer">jsrwell</a></p>
+        </footer>
     </div>
 </template>
 
@@ -17,17 +22,19 @@ import EnergyCalculator from '~/components/EnergyCalculator.vue'
     width: 100%;
     min-height: 100vh;
     padding: 20px;
-    /* Gradiente animado com transição suave e imagem de fundo */
-    background: linear-gradient(135deg, rgba(30, 136, 229, 0.8), rgba(255, 112, 67, 0.8));
+    background: linear-gradient(135deg, rgba(30, 136, 229, 0.6), rgba(255, 112, 67, 0.6));
     animation: gradientAnimation 30s ease-in-out infinite;
-    /* Variáveis globais com Nunito */
     --primary-color: #1e88e5;
     --secondary-color: #ff7043;
     --accent-color: #e3f2fd;
     --background-color: #f1f8e9;
     --border-color: #90caf9;
     --text-color: #424242;
+    --text-light-color: #cddee9;
     --font-family: 'Nunito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .global-root::before {
@@ -72,11 +79,32 @@ import EnergyCalculator from '~/components/EnergyCalculator.vue'
     }
 }
 
-/* Reset e responsividade */
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin:0;
     padding: 0;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
